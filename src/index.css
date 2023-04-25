@@ -1,0 +1,15 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4F4F4F;
+  font-family:'Courier New', Courier, monospace;
+}
+
+h1, h2, h3, h4, h5, h6, p, span{
+  margin: 0;
+}
+

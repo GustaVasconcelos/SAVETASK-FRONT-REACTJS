@@ -1,0 +1,17 @@
+
+//Dados que vão ser armazenado após o login
+export const TOKEN_CHAVE = '&app-token';
+export const ID_USUARIO = '&id-usuario';
+export const NOME_USUARIO = '&nome-usuario';
+
+export const login = token => { localStorage.setItem(TOKEN_CHAVE,token); }
+export const desconectrar = () => { localStorage.clear() };
+
+export const setarIdUsuario = id => localStorage.setItem(ID_USUARIO,id);
+export const pegarIdUsuario = () => localStorage.getItem(ID_USUARIO);
+
+export const setarNomeUsuario = nome => localStorage.setItem(NOME_USUARIO,nome);
+export const pegarNomeUsuario = () => localStorage.getItem(NOME_USUARIO);
+
+
+export const pegarToken = () => localStorage.getItem(TOKEN_CHAVE)
