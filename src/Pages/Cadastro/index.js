@@ -27,12 +27,12 @@ export const Cadastro = () =>{
             }
 
             if(res.data.status === 400){
-                setMsg(res.data.message)
+                setMsg(res.data.mensagem)
                 setTipo('erro')
                 
             }else{
                 console.log(res)
-                setMsg(res.data.message)
+                setMsg(res.data.mensagem)
                 setTipo('sucesso')
             }
         }catch(err){
