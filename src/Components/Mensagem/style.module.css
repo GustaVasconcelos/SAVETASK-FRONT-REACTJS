@@ -1,6 +1,6 @@
 .mensagem{
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
     margin: 10px auto ;
     text-align: center;
     display: flex;
@@ -9,13 +9,19 @@
     border-radius: 5px;
 }
 
+.mensagem p{
+    font-size: clamp(1rem, 0.2rem + 0.7vw, 1.5rem);
+}
+
 .sucesso{
-    color: #2F4F4F;
+    font-weight: bold;
+    color: #fff;
     background-color: #00FF7F;
     border-color: #C3E6CB;
 }
 
 .erro{
+    font-weight: bold;
     color: #fff;
     background-color: #DC143C;
     border-color: #F5C6CB;

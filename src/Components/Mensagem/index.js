@@ -2,23 +2,23 @@ import styles from './style.module.css'
 import { useState, useEffect } from 'react'
 
 const Mensagem = ({tipo, msg}) =>{
-    const [visivel, setVisivel] = useState(false)
+    const [visivel, setVisivel] = useState(true)
 
-    useEffect(() =>{
-        if(!msg){
+    // useEffect(() =>{
+    //     if(!msg){
 
-            return setVisivel(false)
-        }
-        setVisivel(true)
+    //         return setVisivel(false)
+    //     }
+    //     setVisivel(true)
 
-        const tempo = setTimeout(() =>{
-            setVisivel(false)
-        },4000)
+    //     const tempo = setTimeout(() =>{
+    //         setVisivel(false)
+    //     },4000)
 
-        return () => clearTimeout(tempo)
+    //     return () => clearTimeout(tempo)
 
-    },[msg]
-    )
+    // },[msg]
+    // )
 
     return(
         <>

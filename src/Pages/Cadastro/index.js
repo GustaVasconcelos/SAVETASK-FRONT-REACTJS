@@ -3,36 +3,44 @@ import './style.css'
 import api from "../../Services/api";
 import { Link } from "react-router-dom";
 import Mensagem from "../../Components/Mensagem";
-import {setarIdUsuario, setarNomeUsuario, loginToken} from '../../Services/localstorage.js'
 
-export const Login = (props) =>{
+
+export const Cadastro = () =>{
 
     const [usuario, setUsuario] = useState('')
     const [senha, setSenha] = useState('')
-    const [msg, setMsg] = useState('')
+    const [confirmacao, setConfirmacao] = useState('')
 
-    //Fazendo a requisição pro back-end, para efetuar o login
-    const login = async () =>{
+    const [msg, setMsg] = useState('')
+    const [tipo, setTipo] = useState('')
+
+    const cadastrar = async () =>{
 
         try{
             //enviando os dados necessários para o login
-            const data = {usuario,senha}
-            const res = await api.post('/login', data)
-            
+            const data = {usuario,senha, confirmacao}
+            const res = await api.post('/cadastro_usuario', data)
+            console.log(res)
+            if(msg){
+                setMsg('')
+                setTipo('')
+            }
+
             if(res.data.status === 400){
-                setMsg(res.data.mensagem)
+                setMsg(res.data.message)
+                setTipo('erro')
+                
             }else{
                 console.log(res)
-                loginToken(res.data.token)
-                setarIdUsuario(res.data.id_usuario)
-                setarNomeUsuario(res.data.usuario)
+                setMsg(res.data.message)
+                setTipo('sucesso')
             }
         }catch(err){
             console.log(err)
         }
     }
 
-    return (
+    return(
         <div className="container">
             <div className="container-texto">
                 <div className="container-texto-titulo">
@@ -44,21 +52,23 @@ export const Login = (props) =>{
             </div>
             <div className="container-formulario">
                 <div className="container-formulario-titulo">
-                    <h1>Faça o login</h1>
+                    <h1>Faça seu cadastro</h1>
                 </div>
                 <div className="container-formulario-itens">
                     <p>Usuario:</p>
-                    <input value={usuario} onChange={(e) => setUsuario(e.target.value)} placeholder="Digite seu usuario" type="text"/>
+                    <input  placeholder="Digite seu usuario" value={usuario} onChange={(e) => setUsuario(e.target.value)} type="text"/>
                     <p>Senha:</p>
-                    <input value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Digite sua senha" type="password"/>
-                    <button onClick={login}>Login</button>
-                    <Link to='/cadastro'>Não possui uma conta?</Link>
+                    <input  placeholder="Digite sua senha"value={senha} onChange={(e) => setSenha(e.target.value)} type="password"/>
+                    <p>Confirmação</p>
+                    <input  placeholder="Digite sua senha novamente" value={confirmacao} onChange={(e) => setConfirmacao(e.target.value)} type="password"/>
+                    <button onClick={cadastrar}>Cadastrar</button>
+                    <Link to='/'>Já possui uma conta?</Link>
                 </div>
                 <div className="container-formulario-mensagem">
-                    {msg&&
-                        <Mensagem tipo='erro' msg={msg}/>
-                    }
-                </div>
+                        {msg&&
+                            <Mensagem tipo={tipo} msg={msg}/>
+                        }
+                    </div>
             </div>
         </div>
     )
