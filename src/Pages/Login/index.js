@@ -2,19 +2,31 @@ import React, { useState } from "react";
 import './style.css'
 import api from "../../Services/api";
 import { Link } from "react-router-dom";
+import Mensagem from "../../Components/Mensagem";
 
+import {setarIdUsuario, setarNomeUsuario, loginToken} from '../../Services/localstorage.js'
 
 export const Login = (props) =>{
     const [usuario, setUsuario] = useState('')
     const [senha, setSenha] = useState('')
+    const [msg, setMsg] = useState('')
 
+    //Fazendo a requisição pro back-end, para efetuar o login
     const login = async () =>{
 
         try{
+            //enviando os dados necessários para o login
             const data = {usuario,senha}
             const res = await api.post('/login', data)
-
-            console.log(res.data)
+            
+            if(res.data.status === 400){
+                setMsg(res.data.mensagem)
+            }else{
+                console.log(res)
+                loginToken(res.data.token)
+                setarIdUsuario(res.data.id_usuario)
+                setarNomeUsuario(res.data.usuario)
+            }
         }catch(err){
             console.log(err)
         }
@@ -41,7 +53,9 @@ export const Login = (props) =>{
                     <button onClick={login}>Login</button>
                     <Link>Não possui uma conta?</Link>
                     <div className="container-login-formulario-mensagem">
-
+                        {msg&&
+                            <Mensagem tipo='erro' msg={msg}/>
+                        }
                     </div>
                 </div>
             </div>
