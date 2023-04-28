@@ -18,6 +18,10 @@ export const Login = (props) =>{
             //enviando os dados necessários para o login
             const data = {usuario,senha}
             const res = await api.post('/login', data)
+
+            if(msg){
+                setMsg('')
+            }
             
             if(res.data.status === 400){
                 setMsg(res.data.mensagem)

@@ -59,7 +59,7 @@ export const Cadastro = () =>{
                     <input  placeholder="Digite seu usuario" value={usuario} onChange={(e) => setUsuario(e.target.value)} type="text"/>
                     <p>Senha:</p>
                     <input  placeholder="Digite sua senha"value={senha} onChange={(e) => setSenha(e.target.value)} type="password"/>
-                    <p>Confirmação</p>
+                    <p>Confirmação:</p>
                     <input  placeholder="Digite sua senha novamente" value={confirmacao} onChange={(e) => setConfirmacao(e.target.value)} type="password"/>
                     <button onClick={cadastrar}>Cadastrar</button>
                     <Link to='/'>Já possui uma conta?</Link>
