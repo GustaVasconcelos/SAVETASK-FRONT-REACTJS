@@ -30,6 +30,8 @@ export const Login = (props) =>{
                 loginToken(res.data.token)
                 setarIdUsuario(res.data.id_usuario)
                 setarNomeUsuario(res.data.usuario)
+
+                window.location.href ='/Home'
             }
         }catch(err){
             console.log(err)

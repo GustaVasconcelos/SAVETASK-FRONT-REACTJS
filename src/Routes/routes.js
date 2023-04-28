@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { Login } from '../Pages/Login'
 import { Cadastro } from '../Pages/Cadastro'
-// import RotaPrivada from '../Services/authenticacao'
+import PrivateRoute from '../Services/wAuth'
+import { Home } from '../Pages/Home'
 
 const Conteudo = props => (
     <main >
@@ -9,6 +10,8 @@ const Conteudo = props => (
         <Routes>
             <Route exact path="/" element={<Login/>}></Route>
             <Route exact path="/cadastro" element={<Cadastro/>}/>
+            <Route exact path='/Home' element={<PrivateRoute redirectTo='/'><Home/></PrivateRoute>}></Route>
+            <Route path="*" element={<Login/>}></Route>
         </Routes>
     </main>
 )
