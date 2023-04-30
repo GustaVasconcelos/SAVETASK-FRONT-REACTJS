@@ -1,3 +1,4 @@
+import './style.css'
 import api from "../../Services/api"
 import { desconectar, pegarToken } from "../../Services/localstorage"
 
@@ -23,9 +24,30 @@ export const Home = () =>{
         }
     }
     return(
-        <div>
-            <button onClick={finalizarSessao}>desconectar</button>
+        
+        <div className="container-home">
+            <div className='container-home-header'>
+                <div className="container-home-titulo">
+                    <h1>SAVE<span>TASK</span></h1>
+                </div>
+                <div className='container-home-desconectar'>
+                    <button onClick={finalizarSessao}>Desconectar</button>
+                </div>
+            </div>
+            <div className='container-home-itens'>
+                <div className='container-home-itens-formulario'>
+                    <p>Titulo:</p>
+                    <input type='text'></input>
+                    <p>Descrição:</p>
+                    <input type='text'></input>
+                    <button>Adicionar</button>
+                </div>
+                <div className='container-home-itens-formulario'>
+                    
+                </div>
+            </div>
         </div>
+        
     )
 }
 
