@@ -47,7 +47,7 @@
     font-weight: bold;
     margin-top: 10%;
     color: #4F4F4F;
-    font-size: clamp(0.7rem, 0.3rem + 2vw, 1.4rem);
+    font-size: clamp(0.7rem, 0.5rem + 1vw, 1.3rem);
 }
 
 .container-formulario{
@@ -132,8 +132,6 @@
 
 @media screen and (max-width:992px) {
     .container{
-        width: 100vw;
-        height: 100vh;
         flex-direction: column;
     }
 
@@ -146,21 +144,18 @@
         height: 15%;
     }
 
-    .container-formulario-mensagem{
+    .container-texto-mensagem{
         height: 85%;
     }
 
     .container-texto-mensagem h3 {
-        margin-top: 12%;
+        margin-top: 15%;
     }
 
     .container-texto-titulo h1{
         font-size: clamp(1.5rem, 0.7rem + 2.3vw, 3rem);
     }
        
-    .container-texto-mensagem h3{
-        font-size: clamp(1rem, 0.6rem + 1.5vw, 1.4rem);
-    }
 
     .container-formulario-itens{
         width: 60%;
@@ -176,11 +171,34 @@
     .container-formulario-mensagem{
         width: 90%;
         height: 18%;
+
     }
 
     .container-formulario-itens  p{
 
         font-size: clamp(0.8rem, 0.5rem + 1vw, 1.3rem);
     }
+
+}
+
+@media screen and (max-width:586px){
+    .container{
+        width: 100vw;
+        height: 100vh;
+    }
+    .container-texto{
+        height: 40%;
+    }
+
+    .container-formulario{
+        height: 60%;
+    }
+
+    .container-formulario-mensagem{
+       
+        margin-top: 2%;
+
+    }
+    
 
 }
