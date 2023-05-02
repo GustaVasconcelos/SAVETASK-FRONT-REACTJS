@@ -47,7 +47,7 @@
     font-weight: bold;
     margin-top: 10%;
     color: #4F4F4F;
-    font-size: clamp(1rem, 0.4rem + 1.5vw, 1.4rem);
+    font-size: clamp(0.7rem, 0.3rem + 2vw, 1.4rem);
 }
 
 .container-formulario{
@@ -140,6 +140,10 @@
     .container-texto, .container-formulario{
         width: 100%;
         height: 50%;
+    }
+
+    .container-texto-titulo{
+        height: 20%;
     }
 
     .container-texto-titulo h1{

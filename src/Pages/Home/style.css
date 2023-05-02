@@ -74,7 +74,6 @@
 
 .container-home-itens-formulario .container-home-itens-formulario-label{
     width: 60%;
-    
     font-weight: bold;
     color: #7B68EE;
     font-size: clamp(0.8rem, 0.4rem + 2vw, 1.1rem);
