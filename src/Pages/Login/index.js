@@ -14,14 +14,15 @@ export const Login = (props) =>{
     //Fazendo a requisição pro back-end, para efetuar o login
     const login = async () =>{
 
+        if(msg){
+            setMsg('')
+        }
+        
         try{
             //enviando os dados necessários para o login
             const data = {usuario,senha}
             const res = await api.post('/login', data)
 
-            if(msg){
-                setMsg('')
-            }
             
             if(res.data.status === 400){
                 setMsg(res.data.mensagem)

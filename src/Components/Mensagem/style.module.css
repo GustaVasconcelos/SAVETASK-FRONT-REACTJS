@@ -10,19 +10,18 @@
 }
 
 .mensagem p{
+    font-weight: bold;
+    color:#fff ;
+    text-shadow: 1px 1px 1px #000;
     font-size: clamp(1rem, 0.2rem + 0.7vw, 1.5rem);
 }
 
 .sucesso{
-    font-weight: bold;
-    color: #fff;
     background-color: #00FF7F;
     border-color: #C3E6CB;
 }
 
 .erro{
-    font-weight: bold;
-    color: #fff;
     background-color: #DC143C;
     border-color: #F5C6CB;
 }

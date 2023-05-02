@@ -16,16 +16,15 @@ export const Cadastro = () =>{
 
     const cadastrar = async () =>{
 
-        try{
-            //enviando os dados necessários para o login
-            const data = {usuario,senha, confirmacao}
-            const res = await api.post('/cadastro_usuario', data)
-            console.log(res)
-            if(msg){
-                setMsg('')
-                setTipo('')
-            }
+        //enviando os dados necessários para o login
+        const data = {usuario,senha, confirmacao}
+        if(msg){
+            setMsg('')
+            setTipo('')
+        }
 
+        try{
+            const res = await api.post('/cadastro_usuario', data)
             if(res.data.status === 400){
                 setMsg(res.data.mensagem)
                 setTipo('erro')
