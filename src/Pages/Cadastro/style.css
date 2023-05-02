@@ -143,7 +143,15 @@
     }
 
     .container-texto-titulo{
-        height: 20%;
+        height: 15%;
+    }
+
+    .container-formulario-mensagem{
+        height: 85%;
+    }
+
+    .container-texto-mensagem h3 {
+        margin-top: 12%;
     }
 
     .container-texto-titulo h1{
@@ -161,12 +169,13 @@
 
     .container-formulario-titulo{
 
-        height: 20%;
+        height: 22%;
         align-items: center;
 
     }
     .container-formulario-mensagem{
         width: 90%;
+        height: 18%;
     }
 
     .container-formulario-itens  p{
